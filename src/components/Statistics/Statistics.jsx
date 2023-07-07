@@ -3,11 +3,6 @@ import Stat from './Stat';
 import { StatisticsStyled } from './StatisticsStyled';
 
 const Statistics = props => {
-  // function getRandomHexColor() {
-  //   return `#${Math.floor(Math.random() * 16777215)
-  //     .toString(16)
-  //     .padStart(6, 0)}`;
-  // }
   const { title = '', stats } = props;
   return (
     <StatisticsStyled className="statistics">

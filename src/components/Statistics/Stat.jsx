@@ -5,7 +5,7 @@ import { StatStyled } from './StatisticsStyled';
 const Stat = props => {
   const { label, percentage } = props;
   return (
-    <StatStyled className="item" $color={getRandomHexColor()}>
+    <StatStyled className="item" color={getRandomHexColor()}>
       <span className="label">{label}</span>
       <span className="percentage">{percentage}%</span>
     </StatStyled>

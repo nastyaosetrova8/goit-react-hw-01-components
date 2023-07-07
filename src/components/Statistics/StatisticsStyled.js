@@ -28,7 +28,7 @@ export const StatStyled = styled.li`
     width: 100%;
     padding: 10px 0;
     color: #030360;
-    background-color: ${props => props.$color};
+    background-color: ${props => props.color};
 
   &:not(:last-child){
     border-right: 1px solid white;
