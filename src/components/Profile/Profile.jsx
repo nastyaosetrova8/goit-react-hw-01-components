@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { ProfileStyled, NameStyled, StatsStyled } from './ProfileStyled';
 
 const Profile = props => {
   const {
@@ -9,29 +10,29 @@ const Profile = props => {
     stats: { followers, views, likes },
   } = props;
   return (
-    <div className="profile">
+    <ProfileStyled>
       <div className="description">
         <img src={avatar} alt={username} className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">{tag}</p>
+        <NameStyled className="name">{username}</NameStyled>
+        <p className="tag">@{tag}</p>
         <p className="location">{location}</p>
       </div>
 
-      <ul className="stats">
+      <StatsStyled className="stats">
         <li>
-          <span className="label">Followers: </span>
+          <span className="label">Followers</span>
           <span className="quantity">{followers}</span>
         </li>
         <li>
-          <span className="label">Views: </span>
+          <span className="label">Views</span>
           <span className="quantity">{views}</span>
         </li>
         <li>
-          <span className="label">Likes: </span>
+          <span className="label">Likes</span>
           <span className="quantity">{likes}</span>
         </li>
-      </ul>
-    </div>
+      </StatsStyled>
+    </ProfileStyled>
   );
 };
 
@@ -40,7 +41,11 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  stats: PropTypes.object.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
 
 export default Profile;

@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
+import { getRandomHexColor } from 'helpers/getRandomHexColor';
+import { StatStyled } from './StatisticsStyled';
 
 const Stat = props => {
   const { label, percentage } = props;
   return (
-    <li className="item">
+    <StatStyled className="item" $color={getRandomHexColor()}>
       <span className="label">{label}</span>
       <span className="percentage">{percentage}%</span>
-    </li>
+    </StatStyled>
   );
 };
 
@@ -16,3 +18,4 @@ Stat.propTypes = {
 };
 
 export default Stat;
+ 

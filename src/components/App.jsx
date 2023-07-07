@@ -1,14 +1,15 @@
-import Profile from './Profile';
-import user from '../user.json';
-import Statistics from './Statistics';
-import data from '../data.json';
-import FriendList from './FriendList';
-import friends from '../friends.json';
+import Profile from './Profile/Profile';
+import user from '../dataJson/user.json';
+import Statistics from './Statistics/Statistics';
+import data from '../dataJson/data.json';
+import FriendList from './FriendList/FriendList';
+import friends from '../dataJson/friends.json';
+import transactions from '../dataJson/transactions.json';
+import TransactionHistory from './Transaction/TransactionHistory';
 
 // const stats = data.stats;
 
 export const App = () => {
-  // console.log(user);
   return (
     <div>
       <Profile
@@ -19,8 +20,9 @@ export const App = () => {
         stats={user.stats}
       />
       <Statistics title="Upload stats" stats={data} />
-      <Statistics stats={data} />
-      <FriendList friends={friends} />;
+      {/* <Statistics stats={data} /> */}
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />;
     </div>
   );
 };
